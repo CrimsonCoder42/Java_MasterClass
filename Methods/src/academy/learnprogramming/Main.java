@@ -3,20 +3,20 @@ package academy.learnprogramming;
 public class Main {
 
     public static void main(String[] args) {
-//        boolean gameOver = true;
-//        int score = 800;
-//        int levelCompleted = 5;
-//        int bonus = 100;
-//
-//        int highScore = calculateScore(gameOver, score, levelCompleted, bonus);
-//        System.out.println("Your final score was " + highScore);
-//
-//        score = 10000;
-//        levelCompleted = 8;
-//        bonus = 200;
-//
-//        highScore = calculateScore(gameOver, score, levelCompleted, bonus);
-//        System.out.println("Your final score was " + highScore);
+        boolean gameOver = true;
+        int score = 800;
+        int levelCompleted = 5;
+        int bonus = 100;
+
+        int highScore = calculateScore(gameOver, score, levelCompleted, bonus);
+        System.out.println("Your final score was " + highScore);
+
+        score = 10000;
+        levelCompleted = 8;
+        bonus = 200;
+
+        highScore = calculateScore(gameOver, score, levelCompleted, bonus);
+        System.out.println("Your final score was " + highScore);
 
         int position = calculateHighScorePosition(1010);
         displayHighScorePosition("Tom", position );
@@ -38,7 +38,6 @@ public class Main {
         if(gameOver) {
             int finalScore = score + (levelCompleted * bonus);
             finalScore += 2000;
-            System.out.println("Your final score was " + finalScore);
             return finalScore;
         }
 
@@ -50,16 +49,27 @@ public class Main {
        System.out.println(name + " managed to get into position " + position);
     }
 
-    public static int calculateHighScorePosition(int score) {
-        if (score >= 1000) {
-            return 1;
-        } else if(score >= 500 && score < 1000) {
-            return 2;
-        } else if(score >= 100 && score < 500) {
-            return 3;
-        } else {
-            return 4;
+    public static int calculateHighScorePosition(int playerScore) {
+
+//        if (score >= 1000) {
+//            return 1;
+//        } else if(score >= 500) {
+//            return 2;
+//        } else if(score >= 100) {
+//            return 3;
+//        }
+//            return 4;
+
+        int position = 4; // assuming position 4 will be returned
+
+        if(playerScore >= 1000) {
+            position = 1;
+        } else if(playerScore >= 500) {
+            position = 2;
+        } else if(playerScore >= 100); {
+            position = 3;
         }
+        return position;
     }
 
 }
