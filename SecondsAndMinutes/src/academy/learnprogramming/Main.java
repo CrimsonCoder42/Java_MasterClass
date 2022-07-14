@@ -3,7 +3,9 @@ package academy.learnprogramming;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(getDurationString(120,34));
+        System.out.println(getDurationString(65,45));
+
+        System.out.println(getDurationString(3945));
     }
 
     public static String getDurationString(int minutes, int seconds) {
@@ -27,9 +29,9 @@ public class Main {
         int minutes = seconds / 60;
         int newSeconds = seconds % 60;
 
-        getDurationString(minutes,newSeconds);
 
-        return minutes + " m " + newSeconds+ " s";
+
+        return getDurationString(minutes,newSeconds);
 
     }
 
