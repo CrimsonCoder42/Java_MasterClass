@@ -29,16 +29,24 @@ public class Main {
 
         int number =4;
         int finsihNumber = 20;
+        int total = 0;
 
         while(number <= finsihNumber) {
 
             number++;
 
-            if (!isEvenNumber(number)) {
-                continue;
+            if (isEvenNumber(number)) {
+                total++;
+                System.out.println("Even number " + number);
+
+            if (total == 5){
+                System.out.println(total);
+                break;
+            }
             }
 
-            System.out.println("Even number " + number);
+
+
         }
 
     }
