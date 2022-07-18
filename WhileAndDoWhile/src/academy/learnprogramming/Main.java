@@ -40,7 +40,7 @@ public class Main {
                 System.out.println("Even number " + number);
 
             if (total == 5){
-                System.out.println(total);
+                System.out.println("Even  numbers found = "+ total);
                 break;
             }
             }
