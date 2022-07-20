@@ -17,9 +17,7 @@ public class Main {
             if(number % i == 0) {
                 System.out.println(i);
             }
-
         }
-
     }
 
 
