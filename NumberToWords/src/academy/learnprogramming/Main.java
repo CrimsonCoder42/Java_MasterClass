@@ -15,7 +15,6 @@ public class Main {
         }
 
         int numOrder = reverse(number);
-        System.out.println(numOrder);
 
         while(numOrder > 0) {
 
@@ -65,32 +64,27 @@ public class Main {
     public static int reverse(int num) {
 
         int newNum =0;
-        int count = 0;
+
         int officialCount = getDigitCount(num);
 
         while(num > 0){
 
-            newNum = num % 10;
+            newNum += num % 10;
             newNum = newNum * 10;
             num = num /10;
-            count++;
-            System.out.println("newNum "+ newNum);
+
         }
-        System.out.println("officialCount "+ officialCount);
-        System.out.println("Count "+ count);
+        int afterCount = getDigitCount(newNum);;
+        if (officialCount != afterCount){
 
-
-        if (officialCount != count){
-
-            int difference = officialCount - count;
+            int difference = officialCount - afterCount;
             while(difference > 0){
-                newNum = newNum * 10;
+                newNum = newNum / 10;
                 difference--;
             }
-
+            System.out.println(newNum);
             return newNum;
         }
-
         return newNum / 10;
     }
 
@@ -106,7 +100,6 @@ public class Main {
 
             digit = digit / 10;
             count++;
-
         }
 
         return count;
